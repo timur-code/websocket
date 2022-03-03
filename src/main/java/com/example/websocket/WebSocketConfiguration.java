@@ -8,10 +8,10 @@ import org.springframework.web.socket.config.annotation.*;
 
 @Configuration
 @EnableWebSocketMessageBroker
-@EnableWebSocket
 public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer, WebSocketConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
+        registry.addEndpoint("/stomp-endpoint");
         registry.addEndpoint("/stomp-endpoint").withSockJS();
     }
 
